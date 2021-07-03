@@ -1,5 +1,3 @@
-local PREVENT_SKIPPING = true
-
 local checkpoints = {}
 
 local i = 1
