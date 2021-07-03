@@ -1,4 +1,3 @@
-local STAT_NAME = "Stage"
 local PREVENT_SKIPPING = true
 
 local checkpoints = {}
@@ -35,10 +34,10 @@ for index, checkpoint in ipairs(checkpoints) do
 		if not humanoid or humanoid.Health <= 0 then return end
 		local leaderstats = player:FindFirstChild("leaderstats")
 		if not leaderstats then return end
-		local checkpointStat = leaderstats:FindFirstChild(STAT_NAME)
+		local checkpointStat = leaderstats:FindFirstChild("Stage")
 		if not leaderstats then return end
 
-		if (PREVENT_SKIPPING and checkpointStat.Value + 1 == index) or (not PREVENT_SKIPPING and checkpointStat.Value < index) then
+		if (checkpointStat.Value + 1 == index) or (not checkpointStat.Value < index) then
 			checkpointStat.Value = index
 		end
 	end)
